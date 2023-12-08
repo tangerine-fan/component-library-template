@@ -1,0 +1,73 @@
+{
+    "name": "component-library-template",
+    "version": "1.0.0",
+    "private": false,
+    "main": "./dist/beautiful-tree.cjs",
+    "module": "./dist/beautiful-tree.mjs",
+    "types": "./dist/beautiful-tree.d.cts",
+    "exports": {
+        ".": {
+            "import": {
+                "types": "./dist/beautiful-tree.d.mts",
+                "default": "./dist/beautiful-tree.mjs"
+            },
+            "require": {
+                "types": "./dist/beautiful-tree.d.cts",
+                "default": "./dist/beautiful-tree.cjs"
+            },
+            "browser": "./dist/beautiful-tree.iife.js",
+            "default": "./dist/beautiful-tree.umd.js"
+        },
+        "./min": {
+            "import": {
+                "types": "./dist/beautiful-tree.d.mts",
+                "default": "./dist/beautiful-tree.min.mjs"
+            },
+            "require": {
+                "types": "./dist/beautiful-tree.d.cts",
+                "default": "./dist/beautiful-tree.min.cjs"
+            },
+            "browser": "./dist/beautiful-tree.min.iife.js",
+            "default": "./dist/beautiful-tree.min.umd.js"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "rollup --config rollup.config.mjs",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "test:export": "attw --pack"
+    },
+    "devDependencies": {
+        "@arethetypeswrong/cli": "^0.13.3",
+        "@rollup/plugin-terser": "^0.4.4",
+        "@rollup/plugin-typescript": "^11.1.5",
+        "@storybook/addon-essentials": "7.6.4",
+        "@storybook/addon-interactions": "7.6.4",
+        "@storybook/addon-links": "7.6.4",
+        "@storybook/addon-onboarding": "1.0.9",
+        "@storybook/blocks": "7.6.4",
+        "@storybook/react": "7.6.4",
+        "@storybook/react-vite": "7.6.4",
+        "@storybook/test": "7.6.4",
+        "@testing-library/react": "^14.1.2",
+        "@types/react": "^18.2.42",
+        "@types/react-dom": "^18.2.17",
+        "jsdom": "^23.0.1",
+        "publint": "^0.2.6",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "rollup": "^4.7.0",
+        "rollup-plugin-dts": "^6.1.0",
+        "storybook": "7.6.4",
+        "tslib": "^2.6.2",
+        "typescript": "^5.3.3",
+        "vitest": "^1.0.2"
+    },
+    "peerDependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    }
+}
